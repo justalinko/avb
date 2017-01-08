@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Auto Visitor Blog v1
+Comment=Auto Visitor Blog - alinko
+Exec=avb
+Terminal=true
+Type=Application
+Icon=/opt/avb/avb.png
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/pn$
