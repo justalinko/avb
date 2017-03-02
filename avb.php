@@ -11,7 +11,6 @@
 **/
 
 
-
 class Avb{
 	public $UserAgent;
 	public $Alamat;
@@ -34,6 +33,26 @@ class Avb{
 		$exp = explode("\n",$fgt);
 		return $exp;
 	}
+	public function GrabUrl($url){
+		@define(ch,curl_init());
+		curl_setopt(ch,CURLOPT_URL,"http://".$url);
+		curl_setopt(ch,CURLOPT_RETURNTRANSFER,1);
+		curl_setopt(ch,CURLOPT_USERAGENT,"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)");
+		curl_setopt(ch,CURLOPT_FOLLOWLOCATION,1);
+		curl_setopt(ch,CURLOPT_BINARYTRANSFER,1);
+		$exec = curl_exec(ch);
+		preg_match_all("/http:\/\/".$url."\/[0-9]{4}\/[0-9]{2}(.*)\.html/",$exec,$u,PREG_PATTERN_ORDER);
+		return $u;		
+	}
+	public function SimpanX($link){
+		if(!file_exists('/opt/avb/url')){
+			@mkdir('/opt/avb/url');
+		}
+		$tgl =date('dmY');
+		$fp = fopen("/opt/avb/url/".$tgl.".txt","a");
+		return fwrite($fp,$link."\n");
+		fclose($fp);
+	}
 	public function bannerX(){
 		@system('clear');
 echo "    ___     ______          ____    \n";
@@ -48,7 +67,8 @@ echo "| Codename        : MakanBang!      |\n";
 echo "|  Version        : 2.0             |\n";
 echo "|   Author        : shutdown57      |\n";
 echo "+-----------------------------------+\n";
-
+echo "[ 1 ] Grab URL Blog ~ \n";
+echo "[ 2 ] Run AutoVisitor ~ \n";
 	}
 }
 
@@ -58,10 +78,25 @@ $avb->UserAgent=array(
 	"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0");
 $avb->random=rand(0,1);
 $avb->bannerX();
+echo "MakanBang ? :"; $makan = trim(fgets(STDIN));
 
+
+if($makan == "1"){
+@system('clear');
+echo "url blog <GakUsahPakeHttp> : "; $xurl = trim(fgets(STDIN));
+$url = $avb->GrabUrl($xurl);
+$urls = array_unique($url[0]);
+foreach($urls as $u){
+if($avb->SimpanX($u)){
+	echo "$u \n";
+}
+}
+}elseif($makan == "2"){
+@system('clear');
 echo "list url blog  : "; $l = trim(fgets(STDIN));
 echo "berapa banyak  : "; $b = trim(fgets(STDIN));
-$avb->Alamat=$avb->pisahUrl($l);
+$lub = (empty($l)) ? "/opt/avb/url/".date('dmY').".txt" : $l ;
+$avb->Alamat=$avb->pisahUrl($lub);
 $i=1;
 foreach($avb->Alamat as $avb->Url){
 		for($x=1;$x<=$b;$x++){
@@ -71,4 +106,5 @@ foreach($avb->Alamat as $avb->Url){
 		echo "Waiting For You ...";
 	}
 	}
+}
 }
