@@ -52,12 +52,13 @@ fi
 sleep 2
 echo "Click [enter] to accept license :"
 read enter
+clear
 more LICENSE.txt
-
-echo "AVB v1 will installed to '/opt/avb/' "
+clear
+echo "AVB v2 will installed to '/opt/avb/' "
 sleep 1
 echo -e $a_h"[+]$a_n Creating Directory..."
-mkdir /opt/avb
+mkdir -p /opt/avb
 sleep 1
 echo -e $a_h"[+]$a_n Installing AVB v1...."
 chmod 777 -R *
