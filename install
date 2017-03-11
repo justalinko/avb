@@ -36,9 +36,9 @@ else
     if [[ $phpx == "1" ]]; then
      	apt-get install php5 php5-cli php5-curl curl
     elif [[ $phpx == "2" ]]; then
-     	apt-get install php php-cli php-curl curl
+     	apt-get install php php-cli php-curl curl -y
      else
-     	apt-get install php5 php5-cli php5-curl
+     	apt-get install php5 php5-cli php5-curl -y
      fi 
 fi
 sleep 1
@@ -47,7 +47,10 @@ if [[ "$?" -eq "0" ]]; then
 	echo -e "[+]$a_h CURL..................OK!"$a_n
 else
 	echo -e "[-]$a_m CURL..................KO!"$a_n
-	exit 1
+    sleep 2
+	clear
+    echo "[+]$a_b Installing CuRL............"$a_n
+    apt-get install curl -y
 fi
 sleep 2
 echo "Click [enter] to accept license :"
