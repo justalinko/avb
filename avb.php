@@ -3,7 +3,7 @@
 ---------------------------------------------------------------
 # c0ded by  : alinko a.k.a shutdown57
 # contact   : alinkokomansuby@gmail.com
-# Thanks to :  
+# Thanks to :
 # indoXploit.or.id - stackoverflow.com - php.net - curl.haxx.se
 ---------------------------------------------------------------
 # copyright (c) 2k17 linuXcode.org
@@ -42,7 +42,7 @@ class Avb{
 		curl_setopt(ch,CURLOPT_BINARYTRANSFER,1);
 		$exec = curl_exec(ch);
 		preg_match_all("/http:\/\/".$url."\/[0-9]{4}\/[0-9]{2}(.*)\.html/",$exec,$u,PREG_PATTERN_ORDER);
-		return $u;		
+		return $u;
 	}
 	public function SimpanX($link){
 		if(!file_exists('/opt/avb/url')){
@@ -55,6 +55,7 @@ class Avb{
 	}
 	public function bannerX(){
 		@system('clear');
+	
 echo "    ___     ______          ____    \n";
 echo "   / \ \   / / __ )  __   _|___ \   \n";
 echo "  / _ \ \ / /|  _ \  \ \ / / __) |  \n";
@@ -64,7 +65,7 @@ echo "                                    \n";
 echo "+-----------------------------------+\n";
 echo "|   Auto Visitor Blog Version 2.0   |\n";
 echo "| Codename        : MakanBang!      |\n";
-echo "|  Version        : 2.0             |\n";
+echo "|  Version        : 2.1             |\n";
 echo "|   Author        : shutdown57      |\n";
 echo "+-----------------------------------+\n";
 echo "[ 1 ] Grab URL Blog ~ \n";
@@ -78,7 +79,7 @@ $avb->UserAgent=array(
 	"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0");
 $avb->random=rand(0,1);
 $avb->bannerX();
-echo "MakanBang ? :"; $makan = trim(fgets(STDIN));
+echo "optionz >> :"; $makan = trim(fgets(STDIN));
 
 
 if($makan == "1"){
@@ -93,7 +94,9 @@ if($avb->SimpanX($u)){
 }
 }elseif($makan == "2"){
 @system('clear');
+if(!file_exists('/opt/avb/url/'.date('dmY').'.txt')){
 echo "list url blog  : "; $l = trim(fgets(STDIN));
+}
 echo "berapa banyak  : "; $b = trim(fgets(STDIN));
 $lub = (empty($l)) ? "/opt/avb/url/".date('dmY').".txt" : $l ;
 $avb->Alamat=$avb->pisahUrl($lub);
