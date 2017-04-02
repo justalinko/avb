@@ -93,7 +93,7 @@ if($avb->SimpanX($u)){
 	echo "$u \n";
 }
 }
-echo "+---=== [[ Anda telah Mendapatkan kumpulan url ]] ===---+"
+echo "+---=== [[ Anda telah Mendapatkan kumpulan url ]] ===---+";
 echo "+----==== [[ Selanjutnya Buka Kembali AVB lalu pilih opsi nomer \"2\" ]] ====----+";
 }elseif($makan == "2"){
 @system('clear');
