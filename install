@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#---------------------------------------------------------------
+# c0ded by  : alinko a.k.a shutdown57
+# contact   : alinkokomansuby@gmail.com
+# Thanks to :
+# indoXploit.or.id - stackoverflow.com - php.net - curl.haxx.se
+#---------------------------------------------------------------
+# copyright (c) 2k17 linuXcode.org
+#-------------------------------------------------------------
 
 a_init_install(){
 a_m="\033[1;31m"; # merah
@@ -63,7 +71,7 @@ sleep 1
 echo -e $a_h"[+]$a_n Creating Directory..."
 mkdir -p /opt/avb
 sleep 1
-echo -e $a_h"[+]$a_n Installing AVB v1...."
+echo -e $a_h"[+]$a_n Installing AVB v2...."
 chmod 777 -R *
 chmod 777 -R desktop/
 sleep 1
