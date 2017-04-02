@@ -84,7 +84,7 @@ echo "optionz >> :"; $makan = trim(fgets(STDIN));
 
 if($makan == "1"){
 @system('clear');
-echo "+---=== [[ isikan alamat blog anda. cth : www.alinko.jp ]] ===---+";
+echo "+---=== [[ isikan alamat blog anda. cth : www.alinko.jp ]] ===---+ \n";
 echo "url blog <GakUsahPakeHttp> : "; $xurl = trim(fgets(STDIN));
 $url = $avb->GrabUrl($xurl);
 $urls = array_unique($url[0]);
@@ -93,12 +93,12 @@ if($avb->SimpanX($u)){
 	echo "$u \n";
 }
 }
-echo "+---=== [[ Anda telah Mendapatkan kumpulan url ]] ===---+";
-echo "+----==== [[ Selanjutnya Buka Kembali AVB lalu pilih opsi nomer \"2\" ]] ====----+";
+echo "+---=== [[ Anda telah Mendapatkan kumpulan url ]] ===---+ \n";
+echo "+----==== [[ Selanjutnya Buka Kembali AVB lalu pilih opsi nomer \"2\" ]] ====----+ \n";
 }elseif($makan == "2"){
 @system('clear');
 if(!file_exists('/opt/avb/url/'.date('dmY').'.txt')){
-echo "+---=== [[ isikan file yang berisi kumpulan alamat blog. ]] ===---+";
+echo "+---=== [[ isikan file yang berisi kumpulan alamat blog. ]] ===---+ \n";
 echo "list url blog  : "; $l = trim(fgets(STDIN));
 }
 echo "berapa banyak  : "; $b = trim(fgets(STDIN));
@@ -110,7 +110,7 @@ foreach($avb->Alamat as $avb->Url){
 	if($avb->visit($avb->Url,$avb->UserAgent[$avb->random])){
 		@system('clear');
 		echo "[ ".$x." ] ".$avb->Url."\n";
-		echo "Waiting For You ...";
+		echo "[".date('H:i:s')."] Waiting For You ...";
 	}
 	}
 }
