@@ -84,6 +84,7 @@ echo "optionz >> :"; $makan = trim(fgets(STDIN));
 
 if($makan == "1"){
 @system('clear');
+echo "+---=== [[ isikan alamat blog anda. cth : www.alinko.jp ]] ===---+";
 echo "url blog <GakUsahPakeHttp> : "; $xurl = trim(fgets(STDIN));
 $url = $avb->GrabUrl($xurl);
 $urls = array_unique($url[0]);
@@ -92,9 +93,12 @@ if($avb->SimpanX($u)){
 	echo "$u \n";
 }
 }
+echo "+---=== [[ Anda telah Mendapatkan kumpulan url ]] ===---+"
+echo "+----==== [[ Selanjutnya Buka Kembali AVB lalu pilih opsi nomer \"2\" ]] ====----+";
 }elseif($makan == "2"){
 @system('clear');
 if(!file_exists('/opt/avb/url/'.date('dmY').'.txt')){
+echo "+---=== [[ isikan file yang berisi kumpulan alamat blog. ]] ===---+";
 echo "list url blog  : "; $l = trim(fgets(STDIN));
 }
 echo "berapa banyak  : "; $b = trim(fgets(STDIN));
