@@ -13,7 +13,10 @@ root@avb:~# cd avb
 root@avb:~# chmod 755 *
 root@avb:~#./install
 </pre>
-
+# Penggunaan
+<pre>
+root@avebe:~# avebe -h
+</pre>
 
 # Dependensi
 Dependensi yang kurang akan terinstall secara otomatis hanya untuk linux debian dan keturunanya~
