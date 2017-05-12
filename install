@@ -9,25 +9,39 @@
 # copyright (c) 2k17 linuXcode.org
 #-------------------------------------------------------------
 
+#/* AutoVisitor Blog v2.8
+#\* c0ded by : shutdown57 a.k.a alinko
+#/*----------------------------------
+#\*| Hargai karya orang kawand. :)  
+#/*| Jangan kaya BOCAH ganti nama author segala.
+#\*| Kalo cuma bisa "pake" ya, pake saja.. gak usah sok tau,
+#/*| Ganti Nama author segala, Emang situ dah Pro?
+#\*| Kalo dah "PRO" Bisa semua nya,buat sendiri lah bego.
+#/*| Nyadar kalo cuma bisa "pake" , hargai gan!
+#\*| NB : Setidaknya kalo recode tulis "recode by: " dan "Original code by:  "
+#/*|    - Biar apa? biar gak bego kayak bocah.
+#\*----------------------------------
+#*/
+
 a_init_install(){
 a_m="\033[1;31m"; # merah
 a_k="\033[1;33m"; # kuning
 a_h="\033[1;32m"; # hijau
 a_n="\033[0m";    # netral
 a_b="\033[1;34m"; # biru
-echo "    ___     ______          ____    "
-echo "   / \ \   / / __ )  __   _|___ \   "
-echo "  / _ \ \ / /|  _ \  \ \ / / __) |  "
-echo " / ___ \ V / | |_) |  \ V / / __/   "
-echo "/_/   \_\_/  |____/    \_/ |_____|  "
-echo "                                    "
-echo "+-----------------------------------+"
-echo "|   Auto Visitor Blog Version 2.0   |"
-echo "| Codename        : MakanBang!      |"
-echo "|  Version        : 2.0             |"
-echo "|   Author        : shutdown57      |"
-echo "+-----------------------------------+"
+printf"
+   _________   ____    __________        
+  /  _  \   \ /   /____\______   \ ____  
+ /  /_\  \   Y   // __ \|    |  _// __ \ 
+/    |    \     /\  ___/|    |   \  ___/ 
+\____|__  /\___/  \___  >______  /\___  >
+        \/            \/       \/     \/ 
++------------[[ AutoVisitor v2.8  ------------+
+++-----------[[ by : shutdown57  -------------+
++--[[ indonesianpeople.shutdown57@gmail.com  -+
++---------------------------------------------+
 
+"
 echo -e $a_b"[!]$a_n Checking Dependencies ..."
 sleep 1
 which php > /dev/null 2>&1
@@ -71,7 +85,7 @@ sleep 1
 echo -e $a_h"[+]$a_n Creating Directory..."
 mkdir -p /opt/avb
 sleep 1
-echo -e $a_h"[+]$a_n Installing AVB v2...."
+echo -e $a_h"[+]$a_n Installing AVeBe v2.8 ...."
 chmod 777 -R *
 chmod 777 -R desktop/
 sleep 1
@@ -80,7 +94,7 @@ cp desktop/avb.desktop /opt/avb/
 echo -e $a_h"[+]$a_n Creating desktop icon"
 cp desktop/avb.png /opt/avb/
 cp desktop/avb.desktop /usr/share/applications/
-cp autorun.sh /usr/bin/avb
+cp autorun.sh /usr/bin/avebe
 sleep 1
 echo -e $a_b"INSTALLATION FINISHED!"
 }
