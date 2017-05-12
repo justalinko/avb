@@ -24,7 +24,7 @@
 #*/
 
 if [[ `whoami` == "root" ]]; then
-	php /opt/avb/__avb__.php
+	php /opt/avb/__avb__.php $1 $2 $3 $4 $5 $6
 else
 	echo "[+] Kamu belum menjadi Mode Sage. :v"
 	echo "[+] sage maksutnya root "
