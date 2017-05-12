@@ -1,8 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Auto Visitor Blog v2
-Comment=Auto Visitor Blog - alinko
-Exec=avb
+Name=AVeBe v2.8
+Comment=Auto Visitor Blog by shutdown57
+Exec=avebe
 Terminal=true
 Type=Application
 Icon=/opt/avb/avb.png
