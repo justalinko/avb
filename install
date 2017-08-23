@@ -9,18 +9,11 @@
 # copyright (c) 2k17 linuXcode.org
 #-------------------------------------------------------------
 
-#/* AutoVisitor Blog v2.8
-#\* c0ded by : shutdown57 a.k.a alinko
-#/*----------------------------------
-#\*| Hargai karya orang kawand. :)  
-#/*| Jangan kaya BOCAH ganti nama author segala.
-#\*| Kalo cuma bisa "pake" ya, pake saja.. gak usah sok tau,
-#/*| Ganti Nama author segala, Emang situ dah Pro?
-#\*| Kalo dah "PRO" Bisa semua nya,buat sendiri lah bego.
-#/*| Nyadar kalo cuma bisa "pake" , hargai gan!
-#\*| NB : Setidaknya kalo recode tulis "recode by: " dan "Original code by:  "
-#/*|    - Biar apa? biar gak bego kayak bocah.
-#\*----------------------------------
+
+#/*
+#@ Auto Visitor Blog v3
+#@ c0ded by shutdown572
+#@ indonesianpeople.shutdown57@gmail.com
 #*/
 
 a_init_install(){
@@ -36,7 +29,7 @@ printf"
 /    |    \     /\  ___/|    |   \  ___/ 
 \____|__  /\___/  \___  >______  /\___  >
         \/            \/       \/     \/ 
-+------------[[ AutoVisitor v2.8  ------------+
++------------[[ AutoVisitor v3.0  ------------+
 ++-----------[[ by : shutdown57  -------------+
 +--[[ indonesianpeople.shutdown57@gmail.com  -+
 +---------------------------------------------+
@@ -80,21 +73,20 @@ read enter
 clear
 more LICENSE.txt
 clear
-echo "AVB v2 will installed to '/opt/avb/' "
+echo "AVB v3.0 will installed to '/opt/avb/' "
 sleep 1
 echo -e $a_h"[+]$a_n Creating Directory..."
 mkdir -p /opt/avb
 sleep 1
-echo -e $a_h"[+]$a_n Installing AVeBe v2.8 ...."
-chmod 777 -R *
-chmod 777 -R desktop/
+echo -e $a_h"[+]$a_n Installing AVeBe v3.0 ...."
+chmod 755 -R desktop/
 sleep 1
-cp * /opt/avb/
-cp desktop/avb.desktop /opt/avb/
+cp -r * /opt/avb/ > /dev/null 2>&1
+cp desktop/avb.desktop /opt/avb/ > /dev/null 2>&1
 echo -e $a_h"[+]$a_n Creating desktop icon"
-cp desktop/avb.png /opt/avb/
-cp desktop/avb.desktop /usr/share/applications/
-cp autorun.sh /usr/bin/avebe
+cp desktop/avb.png /opt/avb/ > /dev/null 2>&1
+cp desktop/avb.desktop /usr/share/applications/ > /dev/null 2>&1
+cp autorun.sh /usr/bin/avebe > /dev/null 2>&1
 sleep 1
 echo -e $a_b"INSTALLATION FINISHED!"
 }
