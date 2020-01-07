@@ -34,7 +34,7 @@ Class Avebe_s57{
 	public function CekSocks57($socks)
 	{
 		$s=array(
-			CURLOPT_URL=>"http://www.linuxcode.org",
+			CURLOPT_URL=>"https://google.com",
 			CURLOPT_RETURNTRANSFER=>true,
 			CURLOPT_HTTPPROXYTUNNEL=>true,
 			CURLOPT_PROXY=>$socks,
@@ -57,12 +57,13 @@ Class Avebe_s57{
 			CURLOPT_USERAGENT=>$ua,
 			CURLOPT_FOLLOWLOCATION=>true,
 			CURLOPT_COOKIEJAR=>$cookie,
-			CURLOPT_COOKIEFILE=>$cookie);
-		if($socks):
+			CURLOPT_COOKIEFILE=>$cookie
+			CURLOPT_TIMEOUT => 10);
+		if($socks){
 			curl_setopt($c,CURLOPT_HTTPPROXYTUNNEL,true);
 			curl_setopt($c,CURLOPT_PROXY,$socks);
 			curl_setopt($c,CURLOPT_PROXYTYPE,CURLPROXY_SOCKS5);
-		endif;
+		}
 		curl_setopt_array($c,$s);
 		$x=curl_exec($c);
 		return curl_getinfo($c,CURLINFO_HTTP_CODE);//200 OK
@@ -191,6 +192,7 @@ $avb -o  <Value> : Membuat file output.
 $avb -g  <Value> : Mendapatkan URL Artikel yang ada di blog. ( Grab URL)
 $avb -s  <Value> : Masukan List Socks Proxy.
 $avb -z  <Value> : Mendapatkan Socks Proxy (Grab Socks)
+$avb -c  <Value> : Check socks dari socks list file
 $avb -h          : Memunculkan Pusat Bantuan
 
 Contoh Penggunaan :
@@ -200,6 +202,7 @@ $avb -l list_url.txt -m 690
 $avb -g http://www.alinko.jp -o output_list_url.txt
 $avb -u http://www.alinko.jp -m 100 -s socks.txt
 $avb -z output_socks.txt -m 10
+$avb -c list_socks.txt
 ";
 print_r($help);
 	}

@@ -10,7 +10,7 @@
 $avb=new Avebe_s57();
 $avb->UserAgent = $avb->GetSrc57("UserAgent.avebe.list");
 $avb->Referrer  = $avb->GetSrc57("Referrer.avebe.list");
-$lo="u:";$lo.="l:";$lo.="s:";$lo.="m:";$lo.="g:";$lo.="o:";$lo.="z:";
+$lo="u:";$lo.="l:";$lo.="s:";$lo.="m:";$lo.="g:";$lo.="o:";$lo.="z:";$lo.="c:";
 $o=getopt($lo);
 //$ua=$avb->UserAgent[rand(0,count($avb->UserAgent))];
 
@@ -138,5 +138,22 @@ $avb->Help57();
 			echo "+".$avb->NoPad57("---",79,"-",STR_PAD_BOTH)."+\n";
 		}
 		}		
+	}
+
+	if(isset($o['c']))
+	{
+		$socks = explode("\n",file_get_contents($o['c']));
+		foreach($socks as $sock)
+		{
+			$cek = $avb->CekSocks57($sock);
+			if($cek == '200')
+			{
+				$avb->BeautyRes57(1,$n,$sock,$cek);
+				$avb->Save_s57("live-".$o['c'],$sock."\n");
+			}else{
+				$avb->BeautyRes57(0,$n,$sock,$cek);
+				$avb->Save_s57("dead-".$o['c'],$sock."\n");
+			}
+		}
 	}
 }
