@@ -34,7 +34,8 @@ Class Avebe_s57{
 	public function CekSocks57($socks)
 	{
 		$s=array(
-			CURLOPT_URL=>"https://google.com",
+			CURLOPT_URL=>"https://www.google.com",
+			CURLOPT_FOLLOWLOCATION=>true,
 			CURLOPT_RETURNTRANSFER=>true,
 			CURLOPT_HTTPPROXYTUNNEL=>true,
 			CURLOPT_PROXY=>$socks,
@@ -57,7 +58,7 @@ Class Avebe_s57{
 			CURLOPT_USERAGENT=>$ua,
 			CURLOPT_FOLLOWLOCATION=>true,
 			CURLOPT_COOKIEJAR=>$cookie,
-			CURLOPT_COOKIEFILE=>$cookie
+			CURLOPT_COOKIEFILE=>$cookie,
 			CURLOPT_TIMEOUT => 10);
 		if($socks){
 			curl_setopt($c,CURLOPT_HTTPPROXYTUNNEL,true);
